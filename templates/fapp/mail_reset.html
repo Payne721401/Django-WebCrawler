@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- Page for resetting the passwore -->
+
+{% extends "fapp/base.html" %}
+
+{% block body_block %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Reset Your Password</h1>
+        <form method="post" action="{% url 'fapp:reset' %}">
+            {% csrf_token %}
+            <p>Click the button and send a mail to reset your password. </p>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Input Your Email address</label>
+                <input type="text" class="form-control" name="email" placeholder="Email">      
+                <p class="help-block">   EX. Payne.Pe.Yeh@tw.ey.com</p>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Input Your Old Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Old Password">                   
+              </div>
+
+              <div class="form-group">
+                <label for="ResetInputPassword1">Input New Password</label>
+                <input type="password" class="form-control" name="password" placeholder="New Password">                   
+              </div>
+
+              <div class="form-group">
+                <label for="ResetInputPassword2">Input New Password Again</label>
+                <input type="password" class="form-control" name="password" placeholder="New Password Again">                   
+              </div>
+            <p><button type="submit" class="btn btn-primary btn-lg" value='submit' >Reset Password</button></p>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

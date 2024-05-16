@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- Search Page -->
+
+{% extends "fapp/base.html" %}
+
+{% block styles %}
+
+{% endblock %}
+  {% block body_block %}
+  <style>
+    /* 您的背景圖片樣式 */
+    body {
+        background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('https://memeprod.ap-south-1.linodeobjects.com/user-template/a17e96b7884bba60c0a2cf9b27f8ee48.png');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;  
+        animation: slide 10s linear infinite;
+        
+        /* 其他樣式 */
+    }
+    {% comment %} body:hover {
+        background-position: left bottom;
+      } {% endcomment %}
+
+    @keyframes move {
+        100% {
+          transform: translateX(-66.6666%);
+        }
+    }
+
+    .input-group {
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        right: 20%;
+    }
+
+    .head {
+        position: absolute;
+        top: 35%;
+        left: 35%;
+        {% comment %} right: 20%; {% endcomment %}
+        {% comment %} text-align: center; {% endcomment %}
+        font-size: 50px;
+        color: white;
+    }
+
+    /* 您的標題樣式 */
+    h1 {
+        font-size: 50px;
+        color: white;
+        text-align: center;
+    }
+</style>
+
+ <div class="head">
+    <h2><strong>Scrape Tenders You Desire</strong></h2>
+ </div>
+  
+
+  <div class="searchbox">
+    
+    <form method='get' class="input-group">
+        <input type="text" class="form-control" placeholder="Search Something....">
+        <span class="input-group-btn">
+            <button class="btn btn-primary" type="button">Search</button>
+        </span>
+    </form><!-- /input-group -->
+       
+  </div>
+
+  {% comment %} <div class="container">
+    <div class="row justify-content-center">    
+        <div class="col-md-6">
+            <form method='get' class="input-group">
+                <input type="text" class="form-control" placeholder="Search KeyWord....">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </span>
+            </form><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+  </div> {% endcomment %}
+
+  {% endblock  %}
+
+<!-- 重設密碼按鈕 -->
+  
+{% block navbar %}
+  <li class="nav-item" id="resetpwd"> 
+      <a class="nav-link" href={% url 'fapp:sendmail' %}>Reset Password</a>
+  </li>
+{% endblock %}
+  

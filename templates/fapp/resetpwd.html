@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "fapp/base.html" %}
+
+{% block body_block %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Reset Password</h1>
+        <form method="post" action="{% url 'fapp:sendmail' %}">
+            {% csrf_token %}
+            <p>Click the button and send a mail to reset your password. </p>
+            <p><button type="submit" class="btn btn-primary btn-lg" value='submit' >Reset Password</button></p>
+        </form>
+    </div>
+</div>
+
+{% if messages %}
+    <ul class="messages">
+        {% for msg in messages %}
+            alert('{{ msg.message }}')
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% endblock  %}
+

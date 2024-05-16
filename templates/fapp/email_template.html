@@ -1,0 +1,9 @@
+<!-- Generate Email Content -->
+
+{{ username }} 您好:
+
+請點擊下方連結重設密碼:
+
+{{ request.scheme }}://{{ domain }}{% url 'fapp:verify-email-confirm' uidb64=uid token=token %}
+
+
